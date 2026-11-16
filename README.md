@@ -1,4 +1,4 @@
-URBAN JUNGLE HELPER
+#URBAN JUNGLE HELPER
 
 
 O UrbanJungle Helper é uma aplicação web desenvolvida para ajudar amantes de plantas a organizar, cuidar e aprender mais sobre sua coleção botânica. Com uma interface amigável e focada na usabilidade, o projeto oferece desde um checklist diário de tarefas até uma enciclopédia completa de espécies.
