@@ -5,7 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="UrbanJungle Helper - Enciclopédia e catálogo de espécies com requisitos de luz e água.">
   <title>UrbanJungle Helper | Enciclopédia</title>
- <link rel="stylesheet" href="../css/estilopagina.css">
+  <link rel="stylesheet" href="../css/estilopagina.css">
+  <style>
+    dl.species-requirements-list {
+      counter-reset: req-counter !important;
+    }
+    dl.species-requirements-list .req-label {
+      color: darkgreen !important; 
+      font-size: 1.15rem !important;
+      font-weight: bold !important;
+      display: block !important;
+      margin-top: 12px !important;
+      margin-bottom: 4px !important;
+    }
+    dl.species-requirements-list .req-label::before {
+      counter-increment: req-counter !important;
+      content: counter(req-counter) ". " !important;
+      color: #27272a !important; 
+      margin-right: 4px !important;
+    }
+    dl.species-requirements-list .req-value {
+      margin-left: 0 !important;
+      color: #444 !important;
+      font-size: 1rem !important;
+      margin-bottom: 12px !important;
+    }
+    .species-card-body {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 10px 0 !important;
+    }
+    .species-card-body dl.species-requirements-list {
+      flex: 1 !important;
+      margin: 0 !important;
+    }
+    .species-image-container {
+      flex: 0 0 150px !important;
+    }
+    .species-image-container img {
+      width: 100% !important;
+      height: 150px !important;
+      object-fit: cover !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+      display: block !important;
+    }
+  </style>
 </head>
 <body id="page-catalog" class="app-body">
   <header id="main-header" class="site-header">
@@ -65,25 +112,33 @@
 
     <section id="catalog-species-section" class="catalog-section" aria-label="Lista de Espécies do Catálogo">
       <div id="catalog-cards-grid" class="catalog-grid">
-    <article id="species-card-monstera" class="species-card" data-species-id="sp-monstera" data-light="medium" data-water="moderate">
+        
+        <article id="species-card-monstera" class="species-card" data-species-id="sp-monstera" data-light="medium" data-water="moderate">
           <header class="species-card-header">
             <h3 id="species-title-monstera" class="species-common-name">Costela-de-Adão</h3>
             <p class="species-scientific-name"><em>Monstera deliciosa</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Meia-sombra (Luz indireta brilhante)</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Meia-sombra (Luz indireta brilhante)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 5 a 7 dias (quando o topo secar)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
+              </div>
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/adao.jpg" alt="Foto Costela-de-Adão">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 5 a 7 dias (quando o topo secar)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
-            </div>
-          </dl>
+          </div>
+
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-monstera" class="btn btn-view-species" type="button" data-species-id="sp-monstera" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
             <a id="link-use-template-monstera" class="btn" href="add-plant.html?template=sp-monstera" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
@@ -95,20 +150,27 @@
             <h3 id="species-title-sansevieria" class="species-common-name">Espada-de-São-Jorge</h3>
             <p class="species-scientific-name"><em>Dracaena trifasciata</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Sombra a Sol Pleno (Alta adaptabilidade)</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Sombra a Sol Pleno (Alta adaptabilidade)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 12 a 15 dias (resistente à seca)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Tóxica se ingerida</dd>
+              </div>
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/sao jorge.jpg" alt="Foto Espada-de-São-Jorge">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 12 a 15 dias (resistente à seca)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Tóxica se ingerida</dd>
-            </div>
-          </dl>
+          </div>
+
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-sansevieria" class="btn btn-view-species" type="button" data-species-id="sp-sansevieria" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
             <a id="link-use-template-sansevieria" class="btn" href="add-plant.html?template=sp-sansevieria" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
@@ -120,20 +182,27 @@
             <h3 id="species-title-calathea" class="species-common-name">Maranta Pavão</h3>
             <p class="species-scientific-name"><em>Goeppertia makoyana</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Sombra ou meia-sombra (sem sol direto)</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Sombra ou meia-sombra (sem sol direto)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 3 dias (manter substrato levemente úmido)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Segura para animais</dd>
+              </div>
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/pavao.jpg" alt="Foto Maranta Pavão">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 3 dias (manter substrato levemente úmido)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Segura para animais</dd>
-            </div>
-          </dl>
+          </div>
+
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-calathea" class="btn btn-view-species" type="button" data-species-id="sp-calathea" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
             <a id="link-use-template-calathea" class="btn" href="add-plant.html?template=sp-calathea" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
@@ -145,20 +214,27 @@
             <h3 id="species-title-pothos" class="species-common-name">Jiboia</h3>
             <p class="species-scientific-name"><em>Epipremnum aureum</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Meia-sombra (Luz indireta)</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Meia-sombra (Luz indireta)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 5 a 7 dias</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
+              </div> 
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/JIBOIA.jpg" alt="Foto Jiboia">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 5 a 7 dias</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
-            </div> 
-          </dl>
+          </div>
+
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-pothos" class="btn btn-view-species" type="button" data-species-id="sp-pothos" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
             <a id="link-use-template-pothos" class="btn" href="add-plant.html?template=sp-pothos" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
@@ -170,20 +246,27 @@
             <h3 id="species-title-zamioculca" class="species-common-name">Zamioculca</h3>
             <p class="species-scientific-name"><em>Zamioculcas zamiifolia</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Sombra / Baixa Luz</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Sombra / Baixa Luz</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 10 a 15 dias (muito resistente)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Tóxica se ingerida</dd>
+              </div>
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/ZAMIOCULCA.jpg" alt="Foto Zamioculca">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 10 a 15 dias (muito resistente)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Tóxica se ingerida</dd>
-            </div>
-          </dl>
+          </div>
+
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-zamioculca" class="btn btn-view-species" type="button" data-species-id="sp-zamioculca" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
             <a id="link-use-template-zamioculca" class="btn" href="add-plant.html?template=sp-zamioculca" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
@@ -195,52 +278,36 @@
             <h3 id="species-title-echeveria" class="species-common-name">Suculenta Rosa-de-Pedra</h3>
             <p class="species-scientific-name"><em>Echeveria elegans</em></p>
           </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Sol Pleno (4 a 6 horas de sol direto)</dd>
+          
+          <div class="species-card-body">
+            <dl class="species-requirements-list">
+              <div class="req-item">
+                <dt class="req-label">Luminosidade:</dt>
+                <dd class="req-value">Sol Pleno (4 a 6 horas de sol direto)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Rega Recomendada:</dt>
+                <dd class="req-value">A cada 10 a 14 dias (solo totalmente seco)</dd>
+              </div>
+              <div class="req-item">
+                <dt class="req-label">Toxicidade Pet:</dt>
+                <dd class="req-value">Segura para animais</dd>
+              </div>
+            </dl>
+            <div class="species-image-container">
+              <img src="../imagens/SUCULENTA ROSA DO DESERTO.jpg" alt="Foto Suculenta Rosa-de-Pedra">
             </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 10 a 14 dias (solo totalmente seco)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Segura para animais</dd>
-            </div>
-          </dl>
-          <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
-            <button id="btn-view-guide-echeveria" class="btn btn-view-species" type="button" data-species-id="sp-echeveria" style="padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; border-radius: 8px !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Ficha Completa</button>
-            <a id="link-use-template-echeveria" class="btn" href="add-plant.html?template=sp-echeveria" style="display: inline-block !important; padding: 10px 18px !important; background-color: #477a50 !important; color: #ffffff !important; text-decoration: none !important; border-radius: 8px !important; text-align: center !important; border: none !important; cursor: pointer !important; font-weight: bold !important; margin: 0 !important;">Usar no Cadastro</a>
-          </footer>
-        </article>
+          </div>
 
-        <article id="species-card-echeveria" class="species-card" data-species-id="sp-echeveria" data-light="high" data-water="low">
-          <header class="species-card-header">
-            <h3 id="species-title-echeveria" class="species-common-name">Suculenta Rosa-de-Pedra</h3>
-            <p class="species-scientific-name"><em>Echeveria elegans</em></p>
-          </header>
-          <dl class="species-requirements-list">
-            <div class="req-item">
-              <dt class="req-label">Luminosidade:</dt>
-              <dd class="req-value">Sol Pleno (4 a 6 horas de sol direto)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Rega Recomendada:</dt>
-              <dd class="req-value">A cada 10 a 14 dias (solo totalmente seco)</dd>
-            </div>
-            <div class="req-item">
-              <dt class="req-label">Toxicidade Pet:</dt>
-              <dd class="req-value">Segura para animais</dd>
-            </div>
-          </dl>
           <footer class="species-card-footer" style="background-color: transparent; display: flex; gap: 8px; flex-wrap: wrap;">
             <button id="btn-view-guide-echeveria" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-echeveria" style="padding: 10px 18px; background-color: #477a50; color: #ffffff; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; margin: 0;">Ficha Completa</button>
             <a id="link-use-template-echeveria" class="btn" href="add-plant.html?template=sp-echeveria" style="display: inline-block; padding: 10px 18px; background-color: #477a50; color: #ffffff; text-decoration: none; border-radius: 8px; text-align: center; border: none; cursor: pointer; font-weight: bold; margin: 0;">Usar no Cadastro</a>
           </footer>
         </article>
+
       </div>
     </section>
+
     <dialog id="species-details-dialog" class="app-dialog" aria-labelledby="species-dialog-title">
       <form id="species-details-form" class="dialog-form" method="dialog">
         <header class="dialog-header">
@@ -262,4 +329,3 @@
   <script src="../javascript/catalog.js" defer></script>
 </body>
 </html>
-

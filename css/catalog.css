@@ -178,3 +178,56 @@ input[type="checkbox"], input[type="radio"] { width: auto; }
   section, .species-card { padding: 1rem; }
   .nav-link { padding: .45rem .6rem; font-size: .9rem; }
 }
+
+/.species-requirements-list {
+  counter-reset: requisito-contador; 
+}
+
+.req-label {
+  color: #d97706;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.req-label::before {
+  counter-increment: requisito-contador;
+  content: counter(requisito-contador) ". ";
+  color: #27272a;
+}
+
+.req-value {
+  margin-left: 0;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.species-card-body {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  padding: 10px 0 !important;
+}
+
+.species-card-body dl.species-requirements-list {
+  flex: 1 !important;
+  margin: 0 !important;
+}
+
+.species-image-container {
+  flex: 0 0 150px !important;
+}
+
+.species-image-container img {
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  background-color: #f4f4f4 !important;
+  border: 2px dashed #ccc !important;
+  display: block !important;
+}
