@@ -160,7 +160,6 @@ function mostrarPlantasNaTela() {
       '</div>' +
       '<footer class="plant-card-actions species-card-footer">' +
         '<button class="btn btn-success btn-card-water" type="button" onclick="regarPlantaAgora(' + planta.id + ')">Regar Agora</button>' +
-        '<a class="btn btn-secondary" href="plant-details.html?id=' + planta.id + '">Detalhes</a>' +
         '<button class="btn btn-danger btn-card-delete" type="button" onclick="abrirModalExclusao(' + planta.id + ')">Excluir</button>' +
       '</footer>';
 
