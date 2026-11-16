@@ -88,6 +88,19 @@ button, .btn {
   text-decoration: none;
   cursor: pointer;
 }
+#link-dialog-view-collection {
+  display: inline-block;
+  margin: .25rem;
+  padding: .65rem .9rem;
+  border: 0;
+  border-radius: .55rem;
+  color: #ffffff;
+  background: #477a50;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 button:hover, .btn:hover { color: #fff; background: #244d36; }
 .btn-secondary { background: #647568; }
