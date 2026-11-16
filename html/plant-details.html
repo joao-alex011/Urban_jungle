@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Perfil detalhado da planta e histórico completo de regas.">
+  <title>UrbanJungle Helper | Perfil da Planta</title>
+  <link rel="stylesheet" href="../css/plant-details.css">
+</head>
+<body id="page-plant-details" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link active" href="plant-details.html" aria-current="page">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="plant-details-main" class="site-main">
+    <section id="plant-selector-bar" class="details-section selector-section" aria-label="Seleção de Planta">
+      <form id="plant-selector-form" class="selector-form">
+        <label id="label-select-active-plant" class="form-label" for="select-active-plant">Selecionar planta da coleção:</label>
+        <select id="select-active-plant" class="form-select" name="plantId">
+          <option value="plant-001">Costela-de-Adão (Monstera deliciosa)</option>
+        </select>
+      </form>
+    </section>
+
+    <section id="plant-profile-section" class="details-section profile-section" aria-labelledby="detail-plant-name">
+      <div id="plant-profile-layout" class="profile-container" data-plant-id="plant-001">
+        <figure id="detail-photo-Wrapper" class="profile-figure">
+          <img id="detail-plant-image" class="profile-image" src="placeholder-monstera.jpg" alt="Imagem de perfil da planta selecionada">
+          <figcaption id="detail-health-status" class="profile-status-badge">Saudável</figcaption>
+        </figure>
+
+        <div id="detail-info-panel" class="profile-info">
+          <header class="profile-header">
+            <h2 id="detail-plant-name" class="profile-title">Costela-de-Adão</h2>
+            <p id="detail-plant-species" class="profile-species"><em>Monstera deliciosa</em></p>
+          </header>
+
+          <dl id="detail-attributes-list" class="attributes-grid">
+            <div class="attribute-box">
+              <dt class="attribute-label">Ambiente</dt>
+              <dd id="detail-plant-location" class="attribute-value">Sala de Estar</dd>
+            </div>
+            <div class="attribute-box">
+              <dt class="attribute-label">Iluminação</dt>
+              <dd id="detail-plant-sunlight" class="attribute-value">Meia-sombra / Luz Indireta</dd>
+            </div>
+            <div class="attribute-box">
+              <dt class="attribute-label">Frequência de Rega</dt>
+              <dd id="detail-watering-frequency" class="attribute-value">A cada 5 dias</dd>
+            </div>
+            <div class="attribute-box">
+              <dt class="attribute-label">Última Rega</dt>
+              <dd id="detail-last-watered" class="attribute-value"><time datetime="2026-10-28">28/10/2026</time></dd>
+            </div>
+            <div class="attribute-box">
+              <dt class="attribute-label">Próxima Rega</dt>
+              <dd id="detail-next-watering" class="attribute-value"><time datetime="2026-11-02">02/11/2026</time></dd>
+            </div>
+          </dl>
+
+          <div id="detail-notes-container" class="profile-notes">
+            <h3 class="notes-heading">Notas de Cultivo</h3>
+            <p id="detail-plant-notes" class="notes-content">Gosta de borrifadas nas folhas em dias secos. Evitar encharcar o pratinho.</p>
+          </div>
+
+          <div id="detail-actions-bar" class="profile-actions">
+            <button id="btn-detail-water-now" class="btn btn-success" type="button" data-action="log-water">Registrar Rega Hoje</button>
+            <button id="btn-detail-open-edit" class="btn btn-secondary" type="button" data-action="edit-plant">Editar Dados</button>
+            <button id="btn-detail-delete-plant" class="btn btn-danger" type="button" data-action="delete-plant">Excluir Planta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="watering-history-section" class="details-section history-section" aria-labelledby="history-heading">
+      <header class="section-header">
+        <h2 id="history-heading" class="section-title">Histórico de Regas e Cuidados</h2>
+        <button id="btn-add-manual-history" class="btn btn-primary" type="button" data-action="open-history-modal">
+          Adicionar Registro Manual
+        </button>
+      </header>
+
+      <table id="watering-history-table" class="data-table">
+        <caption class="table-caption">Registros cronológicos de manutenção desta planta</caption>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Tipo de Cuidado</th>
+            <th scope="col">Volume / Detalhe</th>
+            <th scope="col">Observações</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="watering-history-tbody">
+          <tr id="history-row-001" class="history-row" data-log-id="log-001">
+            <td><time datetime="2026-10-28">28/10/2026</time></td>
+            <td class="log-type">Rega Completa</td>
+            <td class="log-amount">300 ml</td>
+            <td class="log-note">Solo seco na superfície, folhas firmes.</td>
+            <td>
+              <button id="btn-remove-log-001" class="btn btn-danger btn-sm" type="button" data-log-id="log-001">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <dialog id="edit-plant-dialog" class="app-dialog" aria-labelledby="edit-dialog-title">
+      <form id="edit-plant-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="edit-dialog-title" class="dialog-title">Editar Informações da Planta</h3>
+        </header>
+        <div class="dialog-body">
+          <input id="edit-plant-id" name="plantId" type="hidden" value="plant-001">
+          <div class="form-group">
+            <label class="form-label" for="edit-input-name">Nome da Planta:</label>
+            <input id="edit-input-name" class="form-input" name="plantName" type="text" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="edit-input-frequency">Frequência de Rega (dias):</label>
+            <input id="edit-input-frequency" class="form-input" name="wateringFrequencyDays" type="number" min="1" max="90" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="edit-textarea-notes">Notas de Cultivo:</label>
+            <textarea id="edit-textarea-notes" class="form-textarea" name="plantNotes" rows="3"></textarea>
+          </div>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-edit-plant" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-save-edit-plant" class="btn btn-primary" type="submit" value="save">Salvar Alterações</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/plant-details.js" defer></script>
+</body>
+</html>
+

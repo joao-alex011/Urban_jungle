@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Coleção completa de plantas salvas pelo usuário.">
+  <title>UrbanJungle Helper | Minhas Plantas</title>
+ <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+<body id="page-collection" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link active" href="collection.html" aria-current="page">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="collection-main" class="site-main">
+    <section id="collection-controls-section" class="collection-section controls-section" aria-labelledby="collection-heading">
+      <header id="collection-header" class="section-header">
+        <h2 id="collection-heading" class="section-title">Minhas Plantas</h2>
+        <a id="btn-go-add-plant" class="btn btn-primary" href="add-plant.html">Adicionar Nova Planta</a>
+      </header>
+
+      <form id="collection-filter-form" class="filter-bar" role="search">
+        <div class="form-group">
+          <label id="label-search-plant" class="form-label" for="input-search-plant">Buscar planta:</label>
+          <input id="input-search-plant" class="form-input" name="searchQuery" type="search" placeholder="Nome ou espécie...">
+        </div>
+
+        <div class="form-group">
+          <label id="label-filter-status" class="form-label" for="select-filter-status">Status de Rega:</label>
+          <select id="select-filter-status" class="form-select" name="wateringStatus">
+            <option value="all">Todas as plantas</option>
+            <option value="due-today">Regar hoje</option>
+            <option value="overdue">Atrasadas</option>
+            <option value="up-to-date">Em dia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label id="label-sort-collection" class="form-label" for="select-sort-collection">Ordenar por:</label>
+          <select id="select-sort-collection" class="form-select" name="sortBy">
+            <option value="next-watering">Próxima rega</option>
+            <option value="name-asc">Nome (A-Z)</option>
+            <option value="date-added">Recém adicionadas</option>
+          </select>
+        </div>
+
+        <button id="btn-reset-collection-filters" class="btn btn-secondary" type="reset">Limpar Filtros</button>
+      </form>
+    </section>
+
+    <section id="collection-grid-section" class="collection-section" aria-label="Grade de Plantas Cadastradas">
+      <div id="plants-collection-grid" class="plants-grid" aria-live="polite">
+        <article id="plant-card-001" class="plant-card" data-plant-id="plant-001" data-status="due-today">
+          <figure class="plant-card-figure">
+            <img id="plant-img-001" class="plant-card-image" src="placeholder-monstera.jpg" alt="Foto da planta Costela-de-Adão">
+            <figcaption id="plant-badge-001" class="plant-status-badge status-due">Regar Hoje</figcaption>
+          </figure>
+          <div class="plant-card-content">
+            <h3 id="plant-title-001" class="plant-card-title">Costela-de-Adão</h3>
+            <p id="plant-species-001" class="plant-card-species"><em>Monstera deliciosa</em></p>
+            <dl id="plant-meta-001" class="plant-card-meta">
+              <div class="meta-pair">
+                <dt class="meta-term">Frequência:</dt>
+                <dd class="meta-value" data-field="frequency">A cada 5 dias</dd>
+              </div>
+              <div class="meta-pair">
+                <dt class="meta-term">Última rega:</dt>
+                <dd class="meta-value"><time datetime="2026-10-28" data-field="lastWatered">28/10/2026</time></dd>
+              </div>
+              <div class="meta-pair">
+                <dt class="meta-term">Próxima rega:</dt>
+                <dd class="meta-value"><time datetime="2026-11-02" data-field="nextWatering">02/11/2026</time></dd>
+              </div>
+            </dl>
+          </div>
+          <footer class="plant-card-actions">
+            <button id="btn-water-card-001" class="btn btn-success btn-card-water" type="button" data-plant-id="plant-001">Regar Agora</button>
+            <a id="link-details-card-001" class="btn btn-secondary" href="plant-details.html?id=plant-001">Detalhes</a>
+            <button id="btn-delete-card-001" class="btn btn-danger btn-card-delete" type="button" data-plant-id="plant-001">Excluir</button>
+          </footer>
+        </article>
+      </div>
+
+      <div id="collection-empty-state" class="empty-state-container" hidden>
+        <p id="collection-empty-text" class="empty-state-message">Você ainda não cadastrou nenhuma planta na sua coleção.</p>
+        <a id="btn-empty-add-plant" class="btn btn-primary" href="add-plant.html">Cadastrar Primeira Planta</a>
+      </div>
+    </section>
+
+    <dialog id="confirm-delete-plant-dialog" class="app-dialog" aria-labelledby="delete-dialog-title">
+      <form id="confirm-delete-plant-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="delete-dialog-title" class="dialog-title">Remover Planta da Coleção</h3>
+        </header>
+        <div class="dialog-body">
+          <p id="delete-dialog-message" class="dialog-text">Tem certeza de que deseja remover esta planta? Todo o histórico de regas será apagado.</p>
+          <input id="delete-target-plant-id" name="plantId" type="hidden" value="">
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-delete-plant" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-confirm-delete-plant" class="btn btn-danger" type="submit" value="confirm">Confirmar Exclusão</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/collection.js" defer></script>
+</body>
+</html>
+

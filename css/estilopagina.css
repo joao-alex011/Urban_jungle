@@ -1,0 +1,176 @@
+
+/* Define as cores e a fonte principal da página */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagens/planta123.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #344438;
+    margin: 0;
+    padding: 0;
+}
+.container-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Define o espaço automático entre todas as caixas*/
+}
+
+/* Parte do topo da página */
+header {
+    background-color: #244d36;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+fieldset {
+  margin-bottom: 25px; /* Aumente ou diminua este valor conforme preferir (ex: 20px, 35px) */
+}
+
+/* Título principal */
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+button {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+/* Texto que fica abaixo do título */
+header p {
+    color: #d9e8d5;
+    margin-top: 10px;
+}
+
+/* Organiza os botões do menu na horizontal */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+/* Remove as bolinhas dos itens do menu */
+nav li {
+    list-style: none;
+}
+
+/* Aparência dos botões do menu */
+nav a {
+    background-color: #477a50;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Muda a cor do botão quando passa o mouse */
+nav a:hover {
+    background-color: #6b956b;
+}
+
+/* Área principal onde ficam os conteúdos */
+main {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* Estilo das caixas de conteúdo */
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid #e3e9df;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Títulos das seções */
+h2 {
+    color: rgb(253, 255, 253);
+    border-bottom: 1px solid #dce5d8;
+    padding-bottom: 10px;
+}
+
+/* Títulos menores */
+h3 {
+    color: #276c32;
+}
+
+/* Espaçamento entre as linhas dos textos */
+p {
+    line-height: 1.7;
+}
+
+/* Estilo dos botões */
+button {
+    background-color: #477a50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Muda a cor dos botões ao passar o mouse */
+button:hover {
+    background-color: #244d36;
+}
+
+/* Estilo dos campos de formulário */
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccd8c8;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cor dos links da página */
+a {
+    color: #477a50;
+}
+
+/* Muda a cor dos links ao passar o mouse */
+a:hover {
+    color: #244d36;
+}
+
+/* Parte inferior da página */
+footer {
+    background-color: #244d36;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Ajustes para telas menores, como celulares */
+@media (max-width: 600px) {
+
+    main {
+        margin: 15px;
+        padding: 12px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}

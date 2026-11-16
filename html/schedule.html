@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Cronograma e calendário das próximas regas e manutenções.">
+  <title>UrbanJungle Helper | Cronograma</title>
+  <link rel="stylesheet" href="../css/schedule.css">
+</head>
+<body id="page-schedule" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link active" href="schedule.html" aria-current="page">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="schedule-main" class="site-main">
+    <section id="schedule-controls-section" class="schedule-section" aria-labelledby="schedule-heading">
+      <header id="schedule-header" class="section-header">
+        <h2 id="schedule-heading" class="section-title">Cronograma de Manutenções</h2>
+        <div id="schedule-period-nav" class="period-navigation">
+          <button id="btn-prev-week" class="btn btn-secondary" type="button" data-nav="prev">Semana Anterior</button>
+          <span id="current-period-label" class="period-label">02 Nov 2026 - 08 Nov 2026</span>
+          <button id="btn-next-week" class="btn btn-secondary" type="button" data-nav="next">Próxima Semana</button>
+        </div>
+      </header>
+
+      <form id="schedule-filter-form" class="filter-bar">
+        <div class="form-group">
+          <label class="form-label" for="select-schedule-care-type">Filtrar por tipo de cuidado:</label>
+          <select id="select-schedule-care-type" class="form-select" name="careType">
+            <option value="all">Todos os cuidados</option>
+            <option value="watering">Rega</option>
+            <option value="fertilizing">Adubação</option>
+            <option value="pruning">Poda e Limpeza</option>
+          </select>
+        </div>
+        <button id="btn-open-reschedule-dialog" class="btn btn-primary" type="button">Agendar Evento Extra</button>
+      </form>
+    </section>
+
+    <section id="schedule-timeline-section" class="schedule-section timeline-section" aria-labelledby="timeline-heading">
+      <h3 id="timeline-heading" class="subsection-title">Linha do Tempo dos Próximos 7 Dias</h3>
+
+      <ol id="schedule-timeline-list" class="timeline-list" aria-live="polite">
+        <li id="timeline-day-2026-11-02" class="timeline-day-item day-today" data-date="2026-11-02">
+          <header class="timeline-day-header">
+            <h4 class="day-title">Segunda-feira, <time datetime="2026-11-02">02/11/2026</time> (Hoje)</h4>
+            <span class="day-task-count">2 manutenções previstas</span>
+          </header>
+          <ul class="timeline-events-list">
+            <li id="event-item-001" class="timeline-event-card" data-event-id="evt-001" data-type="watering">
+              <span class="event-badge badge-watering">Rega</span>
+              <strong class="event-plant-name">Costela-de-Adão</strong>
+              <span class="event-location">(Sala de Estar)</span>
+              <button id="btn-complete-event-001" class="btn btn-success btn-sm" type="button" data-event-id="evt-001">Concluir</button>
+            </li>
+            <li id="event-item-002" class="timeline-event-card" data-event-id="evt-002" data-type="fertilizing">
+              <span class="event-badge badge-fertilizing">Adubação</span>
+              <strong class="event-plant-name">Jiboia Dourada</strong>
+              <span class="event-location">(Varanda)</span>
+              <button id="btn-complete-event-002" class="btn btn-success btn-sm" type="button" data-event-id="evt-002">Concluir</button>
+            </li>
+          </ul>
+        </li>
+
+        <li id="timeline-day-2026-11-04" class="timeline-day-item" data-date="2026-11-04">
+          <header class="timeline-day-header">
+            <h4 class="day-title">Quarta-feira, <time datetime="2026-11-04">04/11/2026</time></h4>
+            <span class="day-task-count">1 manutenção prevista</span>
+          </header>
+          <ul class="timeline-events-list">
+            <li id="event-item-003" class="timeline-event-card" data-event-id="evt-003" data-type="watering">
+              <span class="event-badge badge-watering">Rega</span>
+              <strong class="event-plant-name">Espada-de-São-Jorge</strong>
+              <span class="event-location">(Quarto)</span>
+              <button id="btn-complete-event-003" class="btn btn-success btn-sm" type="button" data-event-id="evt-003">Concluir</button>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <dialog id="schedule-event-dialog" class="app-dialog" aria-labelledby="schedule-dialog-title">
+      <form id="schedule-event-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="schedule-dialog-title" class="dialog-title">Agendar Manutenção no Cronograma</h3>
+        </header>
+        <div class="dialog-body">
+          <div class="form-group">
+            <label class="form-label" for="schedule-select-plant">Planta:</label>
+            <select id="schedule-select-plant" class="form-select" name="plantId" required>
+              <option value="plant-001">Costela-de-Adão</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="schedule-select-type">Tipo de Cuidado:</label>
+            <select id="schedule-select-type" class="form-select" name="careType" required>
+              <option value="watering">Rega</option>
+              <option value="fertilizing">Adubação</option>
+              <option value="pruning">Poda</option>
+              <option value="repotting">Troca de Vaso</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="schedule-input-date">Data Programada:</label>
+            <input id="schedule-input-date" class="form-input" name="scheduledDate" type="date" required>
+          </div>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-schedule-event" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-save-schedule-event" class="btn btn-primary" type="submit" value="save">Agendar</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/schedule.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Checklist diário de cuidados com suas plantas.">
+  <title>UrbanJungle Helper | Tarefas</title>
+   <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+<body id="page-tasks" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link active" href="tasks.html" aria-current="page">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="tasks-main" class="site-main">
+    <section id="tasks-create-section" class="tasks-section" aria-labelledby="tasks-heading">
+      <header id="tasks-header" class="section-header">
+        <h2 id="tasks-heading" class="section-title">Checklist Diário de Cuidados</h2>
+        <div id="tasks-progress-wrapper" class="progress-box">
+          <label id="label-daily-progress" for="daily-tasks-progress">Progresso de hoje:</label>
+          <progress id="daily-tasks-progress" class="tasks-progress-bar" value="1" max="3">33%</progress>
+          <output id="daily-tasks-counter" class="progress-counter">1 de 3 concluídas</output>
+        </div>
+      </header>
+
+      <form id="form-add-task" class="task-creation-form">
+        <div class="form-group">
+          <label class="form-label" for="input-task-title">Nova Tarefa *</label>
+          <input id="input-task-title" class="form-input" name="taskTitle" type="text" required placeholder="Ex: Borrifar água nas samambaias">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="select-task-category">Categoria *</label>
+          <select id="select-task-category" class="form-select" name="taskCategory" required>
+            <option value="regar">Regar</option>
+            <option value="adubar">Adubar</option>
+            <option value="podar">Podar / Limpar Folhas</option>
+            <option value="inspecionar">Controlar Pragas</option>
+            <option value="replantar">Substrato / Vaso</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="select-task-plant">Planta Associada</label>
+          <select id="select-task-plant" class="form-select" name="plantId">
+            <option value="general">Cuidado Geral do Jardim</option>
+            <option value="plant-001">Costela-de-Adão</option>
+          </select>
+        </div>
+
+        <button id="btn-submit-new-task" class="btn btn-primary" type="submit">Adicionar ao Checklist</button>
+      </form>
+    </section>
+
+    <section id="tasks-list-section" class="tasks-section" aria-labelledby="checklist-heading">
+      <header class="section-header">
+        <h3 id="checklist-heading" class="subsection-title">Tarefas Pendentes e Concluídas</h3>
+        <button id="btn-clear-completed-tasks" class="btn btn-secondary" type="button">Limpar Concluídas</button>
+      </header>
+
+      <form id="checklist-form" class="checklist-container">
+        <fieldset id="fieldset-watering-tasks" class="checklist-group">
+          <legend class="checklist-group-title">Hidratação e Rega</legend>
+          <ul id="task-list-watering" class="task-items-list">
+            <li id="task-item-101" class="task-item" data-task-id="task-101" data-category="regar">
+              <input id="checkbox-task-101" class="task-checkbox" name="completedTasks" type="checkbox" value="task-101">
+              <label id="label-task-101" class="task-label" for="checkbox-task-101">
+                Regar Costela-de-Adão (300 ml)
+              </label>
+              <span class="task-tag tag-watering">Regar</span>
+              <button id="btn-delete-task-101" class="btn btn-danger btn-sm" type="button" data-task-id="task-101">Remover</button>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset id="fieldset-maintenance-tasks" class="checklist-group">
+          <legend class="checklist-group-title">Adubação, Poda e Manutenção</legend>
+          <ul id="task-list-maintenance" class="task-items-list">
+            <li id="task-item-102" class="task-item" data-task-id="task-102" data-category="adubar">
+              <input id="checkbox-task-102" class="task-checkbox" name="completedTasks" type="checkbox" value="task-102">
+              <label id="label-task-102" class="task-label" for="checkbox-task-102">
+                Aplicar NPK 10-10-10 na Jiboia Dourada
+              </label>
+              <span class="task-tag tag-fertilizing">Adubar</span>
+              <button id="btn-delete-task-102" class="btn btn-danger btn-sm" type="button" data-task-id="task-102">Remover</button>
+            </li>
+
+            <li id="task-item-103" class="task-item task-completed" data-task-id="task-103" data-category="podar">
+              <input id="checkbox-task-103" class="task-checkbox" name="completedTasks" type="checkbox" value="task-103" checked>
+              <label id="label-task-103" class="task-label" for="checkbox-task-103">
+                Retirar folhas secas da Zamioculca
+              </label>
+              <span class="task-tag tag-pruning">Podar</span>
+              <button id="btn-delete-task-103" class="btn btn-danger btn-sm" type="button" data-task-id="task-103">Remover</button>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </section>
+
+    <dialog id="clear-tasks-dialog" class="app-dialog" aria-labelledby="clear-tasks-dialog-title">
+      <form id="clear-tasks-dialog-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="clear-tasks-dialog-title" class="dialog-title">Arquivar Tarefas Concluídas</h3>
+        </header>
+        <div class="dialog-body">
+          <p class="dialog-text">Deseja remover da lista todas as tarefas já marcadas como concluídas hoje?</p>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-clear-tasks" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-confirm-clear-tasks" class="btn btn-primary" type="submit" value="confirm">Confirmar</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/tasks.js" defer></script>
+</body>
+</html>
+

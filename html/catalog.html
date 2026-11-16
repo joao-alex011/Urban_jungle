@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Enciclopédia e catálogo de espécies com requisitos de luz e água.">
+  <title>UrbanJungle Helper | Enciclopédia</title>
+ <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+<body id="page-catalog" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link active" href="catalog.html" aria-current="page">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="catalog-main" class="site-main">
+    <section id="catalog-search-section" class="catalog-section" aria-labelledby="catalog-heading">
+      <header id="catalog-header" class="section-header">
+        <h2 id="catalog-heading" class="section-title">Enciclopédia de Espécies Domésticas</h2>
+        <p id="catalog-subtitle" class="section-subtitle">Consulte os requisitos ideais de luminosidade, rega e umidade para espécies comuns.</p>
+      </header>
+
+      <form id="catalog-filter-form" class="filter-bar" role="search">
+        <div class="form-group">
+          <label class="form-label" for="input-catalog-search">Pesquisar Espécie:</label>
+          <input id="input-catalog-search" class="form-input" name="speciesQuery" type="search" placeholder="Ex: Jiboia, Espada, Zamioculca...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="select-catalog-light">Nível de Luz:</label>
+          <select id="select-catalog-light" class="form-select" name="lightRequirement">
+            <option value="all">Qualquer iluminação</option>
+            <option value="low">Sombra / Baixa Luz</option>
+            <option value="medium">Meia-sombra / Luz Indireta</option>
+            <option value="high">Sol Pleno</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="select-catalog-water">Exigência de Água:</label>
+          <select id="select-catalog-water" class="form-select" name="waterRequirement">
+            <option value="all">Qualquer frequência</option>
+            <option value="low">Baixa (10 a 15 dias)</option>
+            <option value="moderate">Moderada (5 a 7 dias)</option>
+            <option value="frequent">Frequente (2 a 3 dias)</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <section id="catalog-species-section" class="catalog-section" aria-label="Lista de Espécies do Catálogo">
+      <div id="catalog-cards-grid" class="catalog-grid">
+        <article id="species-card-monstera" class="species-card" data-species-id="sp-monstera" data-light="medium" data-water="moderate">
+          <header class="species-card-header">
+            <h3 id="species-title-monstera" class="species-common-name">Costela-de-Adão</h3>
+            <p class="species-scientific-name"><em>Monstera deliciosa</em></p>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Meia-sombra (Luz indireta brilhante)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 5 a 7 dias (quando o topo secar)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-monstera" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-monstera">Ficha Completa</button>
+            <a id="link-use-template-monstera" class="btn btn-primary" href="add-plant.html?template=sp-monstera">Usar no Cadastro</a>
+          </footer>
+        </article>
+
+        <article id="species-card-sansevieria" class="species-card" data-species-id="sp-sansevieria" data-light="low" data-water="low">
+          <header class="species-card-header">
+            <h3 id="species-title-sansevieria" class="species-common-name">Espada-de-São-Jorge</h3>
+            <p class="species-scientific-name"><em>Dracaena trifasciata</em></p>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Sombra a Sol Pleno (Alta adaptabilidade)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 12 a 15 dias (resistente à seca)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Tóxica se ingerida</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-sansevieria" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-sansevieria">Ficha Completa</button>
+            <a id="link-use-template-sansevieria" class="btn btn-primary" href="add-plant.html?template=sp-sansevieria">Usar no Cadastro</a>
+          </footer>
+        </article>
+
+        <article id="species-card-calathea" class="species-card" data-species-id="sp-calathea" data-light="low" data-water="frequent">
+          <header class="species-card-header">
+            <h3 id="species-title-calathea" class="species-common-name">Maranta Pavão</h3>
+            <p class="species-scientific-name"><em>Goeppertia makoyana</em></p>
+            <article id="species-card-pothos" class="species-card" data-species-id="sp-pothos" data-light="medium" data-water="moderate">
+          <header class="species-card-header">
+            <h3 id="species-title-pothos" class="species-common-name">Jiboia</h3>
+            <p class="species-scientific-name"><em>Epipremnum aureum</em></p>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Meia-sombra (Luz indireta)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 5 a 7 dias</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Tóxica se ingerida por cães e gatos</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-pothos" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-pothos">Ficha Completa</button>
+            <a id="link-use-template-pothos" class="btn btn-primary" href="add-plant.html?template=sp-pothos">Usar no Cadastro</a>
+          </footer>
+        </article>
+
+        <article id="species-card-zamioculca" class="species-card" data-species-id="sp-zamioculca" data-light="low" data-water="low">
+          <header class="species-card-header">
+            <h3 id="species-title-zamioculca" class="species-common-name">Zamioculca</h3>
+            <p class="species-scientific-name"><em>Zamioculcas zamiifolia</em></p>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Sombra / Baixa Luz</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 10 a 15 dias (muito resistente)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Tóxica se ingerida</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-zamioculca" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-zamioculca">Ficha Completa</button>
+            <a id="link-use-template-zamioculca" class="btn btn-primary" href="add-plant.html?template=sp-zamioculca">Usar no Cadastro</a>
+          </footer>
+        </article>
+
+        <article id="species-card-echeveria" class="species-card" data-species-id="sp-echeveria" data-light="high" data-water="low">
+          <header class="species-card-header">
+            <h3 id="species-title-echeveria" class="species-common-name">Suculenta Rosa-de-Pedra</h3>
+            <p class="species-scientific-name"><em>Echeveria elegans</em></p>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Sol Pleno (4 a 6 horas de sol direto)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 10 a 14 dias (solo totalmente seco)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Segura para animais</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-echeveria" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-echeveria">Ficha Completa</button>
+            <a id="link-use-template-echeveria" class="btn btn-primary" href="add-plant.html?template=sp-echeveria">Usar no Cadastro</a>
+          </footer>
+        </article>
+          </header>
+          <dl class="species-requirements-list">
+            <div class="req-item">
+              <dt class="req-label">Luminosidade:</dt>
+              <dd class="req-value">Sombra ou meia-sombra (sem sol direto)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Rega Recomendada:</dt>
+              <dd class="req-value">A cada 3 dias (manter substrato levemente úmido)</dd>
+            </div>
+            <div class="req-item">
+              <dt class="req-label">Toxicidade Pet:</dt>
+              <dd class="req-value">Segura para animais</dd>
+            </div>
+          </dl>
+          <footer class="species-card-footer">
+            <button id="btn-view-guide-calathea" class="btn btn-secondary btn-view-species" type="button" data-species-id="sp-calathea">Ficha Completa</button>
+            <a id="link-use-template-calathea" class="btn btn-primary" href="add-plant.html?template=sp-calathea">Usar no Cadastro</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <dialog id="species-details-dialog" class="app-dialog" aria-labelledby="species-dialog-title">
+      <form id="species-details-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="species-dialog-title" class="dialog-title">Guia Botânico da Espécie</h3>
+        </header>
+        <div id="species-dialog-content" class="dialog-body">
+          <p id="species-dialog-description" class="dialog-text">Detalhes técnicos de substrato, adubação e poda para a espécie selecionada.</p>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-close-species-dialog" class="btn btn-primary" type="submit" value="close">Fechar Ficha</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/catalog.js" defer></script>
+</body>
+</html>
+

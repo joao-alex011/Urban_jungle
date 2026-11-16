@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanJungle Helper | Sobre</title>
+    <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+
+<body id="page-about" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a>
+        </li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link active" href="about.html" aria-current="page">Sobre</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="about-main" class="site-main">
+    <section id="about-project-section" class="about-section" aria-labelledby="about-heading">
+      <header class="section-header">
+        <h2 id="about-heading" class="section-title">Sobre o UrbanJungle Helper</h2>
+      </header>
+      <article id="about-overview-article" class="about-article">
+        <p class="about-paragraph">
+          O <strong>UrbanJungle Helper</strong> é uma aplicação web client-side projetada para ajudar entusiastas de
+          plantas domésticas a organizarem suas rotinas de rega, adubação e poda sem complicações.
+        </p>
+        <p class="about-paragraph">
+          Todos os dados são armazenados diretamente no seu navegador por meio de <code>LocalStorage</code>,
+          garantindo rapidez e privacidade.
+        </p>
+      </article>
+    </section>
+
+    <section id="how-to-use-section" class="about-section" aria-labelledby="guide-heading">
+      <header class="section-header">
+        <h2 id="guide-heading" class="section-title">Guia Passo a Passo de Como Usar</h2>
+      </header>
+
+      <ol id="how-to-steps-list" class="guide-steps-list">
+        <li id="guide-step-1" class="guide-step-item">
+          <h3 class="step-title"> Cadastre suas plantas</h3>
+          <p class="step-description">
+            Acesse a página <a class="inline-link" href="add-plant.html">Nova Planta</a> ou consulte a <a
+              class="inline-link" href="catalog.html">Enciclopédia</a> para preencher o nome, espécie, intervalo de rega
+            em dias e data da última hidratação.
+          </p>
+        </li>
+        <li id="guide-step-2" class="guide-step-item">
+          <h3 class="step-title"> Acompanhe sua Coleção e o Cronograma</h3>
+          <p class="step-description">
+            Em <a class="inline-link" href="collection.html">Minhas Plantas</a> você visualiza todos os seus vasos e
+            status de hidratação. No <a class="inline-link" href="schedule.html">Cronograma</a>, confira as previsões da
+            semana.
+          </p>
+        </li>
+        <li id="guide-step-3" class="guide-step-item">
+          <h3 class="step-title"> Marque tarefas e organize seu Jardim</h3>
+          <p class="step-description">
+            Registre cada cuidado nas páginas de <a class="inline-link" href="tasks.html">Tarefas</a> ou <a
+              class="inline-link" href="plant-details.html">Perfil da Planta</a> para manter sua planta saudavel e viva.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="faq-section" class="about-section" aria-labelledby="faq-heading">
+      <header class="section-header">
+        <h2 id="faq-heading" class="section-title">Perguntas Frequentes (FAQ)</h2>
+      </header>
+
+      <div id="faq-accordion-group" class="faq-container">
+        <details id="faq-item-storage" class="faq-details">
+          <summary class="faq-summary">Meus dados somem se eu fechar o navegador?</summary>
+          <p class="faq-answer">Não. Os dados ficam persistidos no <code>LocalStorage</code> do seu navegador até que
+            você limpe os dados de navegação ou use a opção de limpeza nas Configurações.</p>
+        </details>
+
+        <details id="faq-item-calculation" class="faq-details">
+          <summary class="faq-summary">Como a próxima rega é calculada?</summary>
+          <p class="faq-answer">O sistema soma a frequência em dias definida no cadastro à data da última rega
+            registrada para aquela planta.</p>
+        </details>
+      </div>
+
+      <div class="feedback-trigger-box">
+        <button id="btn-open-feedback-dialog" class="btn btn-primary" type="button">Enviar Sugestão ou Relato</button>
+      </div>
+    </section>
+
+    <dialog id="feedback-dialog" class="app-dialog" aria-labelledby="feedback-dialog-title">
+      <form id="feedback-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="feedback-dialog-title" class="dialog-title">Registrar Sugestão Local</h3>
+        </header>
+        <div class="dialog-body">
+          <div class="form-group">
+            <label class="form-label" for="input-feedback-subject">Assunto:</label>
+            <input id="input-feedback-subject" class="form-input" name="subject" type="text" required
+              placeholder="Ex: Nova espécie para o catálogo">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="textarea-feedback-message">Mensagem:</label>
+            <textarea id="textarea-feedback-message" class="form-textarea" name="message" rows="4" required
+              placeholder="Descreva sua ideia..."></textarea>
+          </div>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-feedback" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-submit-feedback" class="btn btn-primary" type="submit" value="send">Salvar Nota</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+    <script src="../javascript/about.js" defer></script>  
+</body>
+
+</html>

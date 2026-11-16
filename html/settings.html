@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="UrbanJungle Helper - Configurações de notificações, backup e gerenciamento do LocalStorage.">
+  <title>UrbanJungle Helper | Configurações</title>
+  <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+
+<body id="page-settings" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a>
+        </li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link active" href="settings.html"
+            aria-current="page">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="settings-main" class="site-main">
+    <section id="preferences-section" class="settings-section" aria-labelledby="preferences-heading">
+      <header class="section-header">
+        <h2 id="preferences-heading" class="section-title">Preferências do Aplicativo e Notificações</h2>
+      </header>
+
+      <form id="form-user-preferences" class="settings-form">
+        <fieldset id="fieldset-notifications" class="form-fieldset">
+          <legend class="fieldset-legend">Alertas de Cuidados</legend>
+
+          <div class="form-group form-group-checkbox">
+            <input id="input-enable-notifications" class="form-checkbox" name="enableNotifications" type="checkbox"
+              checked>
+            <label id="label-enable-notifications" class="form-label" for="input-enable-notifications">
+              Ativar lembretes de rega no navegador
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label id="label-reminder-time" class="form-label" for="input-reminder-time">Horário padrão para lembretes
+              diários:</label>
+            <input id="input-reminder-time" class="form-input" name="reminderTime" type="time" value="08:30">
+          </div>
+        </fieldset>
+
+
+        <div class="form-group">
+          <label id="label-climate-region" class="form-label" for="select-climate-region">Clima Predominante da
+            Região:</label>
+          <select id="select-climate-region" class="form-select" name="climateRegion">
+            <option value="tropical">Tropical Úmido</option>
+            <option value="subtropical">Subtropical</option>
+            <option value="semi-arid">Semiárido / Seco</option>
+            <option value="equatorial">Equatorial</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button id="btn-save-preferences" class="btn btn-primary" type="submit">Salvar Preferências</button>
+        </div>
+      </form>
+    </section>
+    <section class="settings-section">
+      <article id=" clear-storage-card" class="settings-card card-danger">
+        <h3 class="settings-card-title">Zona de Perigo: Limpar LocalStorage</h3>
+        <p class="settings-card-desc">Remove permanentemente todas as plantas, configurações e estatísticas salvas neste
+          navegador.</p>
+        <button id="btn-open-clear-storage-dialog" class="btn btn-danger" type="button"
+          data-action="confirm-clear-storage">
+          Apagar Todos os Dados
+        </button>
+      </article>
+    </section>
+    <dialog id="confirm-clear-storage-dialog" class="app-dialog" aria-labelledby="clear-storage-dialog-title">
+      <form id="confirm-clear-storage-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="clear-storage-dialog-title" class="dialog-title">Confirmar Limpeza Total do LocalStorage</h3>
+        </header>
+        <div class="dialog-body">
+          <p class="dialog-text">Esta ação é irreversível! Todas as plantas e registros serão apagados. Digite
+            <strong>LIMPAR</strong> abaixo para confirmar:
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="input-confirm-wipe">Palavra de confirmação:</label>
+            <input id="input-confirm-wipe" class="form-input" name="confirmText" type="text" pattern="LIMPAR" required
+              placeholder="Digite LIMPAR">
+          </div>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-cancel-wipe-storage" class="btn btn-secondary" type="submit" value="cancel">Cancelar</button>
+          <button id="btn-confirm-wipe-storage" class="btn btn-danger" type="submit" value="wipe">Limpar
+            LocalStorage</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/settings.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+/* Configurações da pagina */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: #263b2d;
+  background: #f2f6ef url("../imagens/planta123.jpg") center / cover fixed no-repeat;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+[hidden] { display: none !important; }
+
+/* Estrutura Principal */
+.site-header, .site-footer {
+  padding: 1.25rem;
+  color: #fff;
+  background: #244d36;
+  text-align: center;
+}
+
+.site-footer { margin-top: 2rem; }
+
+.brand-title { margin: 0; font-size: clamp(1.7rem, 4vw, 2rem); }
+.brand-tagline { margin: .25rem 0 0; color: #d9e8d5; }
+
+.site-main {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+section {
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e3e9df;
+  border-radius: .85rem;
+  background: #fff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 6%);
+}
+
+h2, .section-title {
+  padding-bottom: .6rem;
+  color: #244d36;
+  border-bottom: 1px solid #dce5d8;
+}
+
+h3 { color: #276c32; }
+
+/* Navegação */
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: .55rem .8rem;
+  border-radius: .6rem;
+  color: #fff;
+  background: #477a50;
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+  background: #6b956b;
+}
+
+/* Formulários, Campos e Botões */
+button, .btn {
+  display: inline-block;
+  margin: .25rem;
+  padding: .65rem .9rem;
+  border: 0;
+  border-radius: .55rem;
+  color: #fff;
+  background: #477a50;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover, .btn:hover { color: #fff; background: #244d36; }
+.btn-secondary { background: #647568; }
+.btn-success { background: #347b4a; }
+.btn-danger { background: #a63d3d; }
+
+input, select, textarea {
+  width: 100%;
+  padding: .65rem;
+  border: 1px solid #ccd8c8;
+  border-radius: .5rem;
+  font: inherit;
+}
+
+input[type="checkbox"], input[type="radio"] { width: auto; }
+
+.form-group { display: grid; gap: .35rem; margin-bottom: .85rem; }
+.form-label, label { font-weight: 600; }
+
+.form-fieldset {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid #dce5d8;
+  border-radius: .7rem;
+}
+
+.fieldset-legend { padding: 0 .4rem; font-weight: 700; }
+
+/* Grids e Alinhamentos */
+.section-header, .form-actions, .dialog-footer, .period-navigation, .profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.filter-bar, .task-creation-form, .attributes-grid, .metrics-grid, .catalog-grid, .plants-grid, .badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+/* Componentes Específicos (Diálogos) */
+.app-dialog {
+  width: min(560px, calc(100% - 2rem));
+  max-height: 90vh;
+  overflow: auto;
+  padding: 1.25rem;
+  border: 0;
+  border-radius: .9rem;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 25%);
+}
+
+.app-dialog::backdrop { background: rgb(20 35 25 / 60%); }
+
+/* Perfil da Planta e Atributos */
+.profile-container {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.profile-figure {
+  margin: 0;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: .8rem;
+}
+
+.attribute-box {
+  padding: .75rem;
+  border-radius: .6rem;
+  background: #f3f7f0;
+}
+
+.attribute-value {
+  margin: .25rem 0 0;
+}
+
+/* Tabelas de Dados */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: .65rem;
+  border-bottom: 1px solid #e3e9df;
+  text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-main { width: calc(100% - 1rem); margin: .5rem auto; padding: .75rem; }
+  section { padding: 1rem; }
+  .nav-link { padding: .45rem .6rem; font-size: .9rem; }
+}

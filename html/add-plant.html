@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Cadastre uma nova planta na sua rotina de cuidados.">
+  <title>UrbanJungle Helper | Nova Planta</title>
+ <link rel="stylesheet" href="../css/estilopagina.css">
+</head>
+<body id="page-add-plant" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link active" href="add-plant.html" aria-current="page">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="add-plant-main" class="site-main">
+    <section id="add-plant-form-section" class="form-section" aria-labelledby="add-plant-heading">
+      <header id="add-plant-header" class="section-header">
+        <h2 id="add-plant-heading" class="section-title">Cadastrar Nova Planta</h2>
+        <p id="add-plant-subtitle" class="section-subtitle">Preencha os dados abaixo para agendar automaticamente as próximas regas.</p>
+      </header>
+
+      <form id="form-add-plant" class="plant-form" enctype="multipart/form-data">
+        <fieldset id="fieldset-basic-info" class="form-fieldset">
+          <legend class="fieldset-legend">Identificação da Planta</legend>
+
+          <div class="form-group">
+            <label id="label-plant-name" class="form-label" for="input-plant-name">Apelido ou Nome Popular *</label>
+            <input id="input-plant-name" class="form-input" name="plantName" type="text" required placeholder="Ex: Costela da Sala">
+          </div>
+
+          <div class="form-group">
+            <label id="label-plant-species" class="form-label" for="input-plant-species">Espécie ou Nome Científico *</label>
+            <input id="input-plant-species" class="form-input" name="plantSpecies" type="text" list="species-suggestions" required placeholder="Ex: Monstera deliciosa">
+            <datalist id="species-suggestions">
+              <option value="Monstera deliciosa"></option>
+              <option value="Sansevieria trifasciata"></option>
+              <option value="Epipremnum aureum"></option>
+              <option value="Zamioculcas zamiifolia"></option>
+              <option value="Ficus lyrata"></option>
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label id="label-plant-location" class="form-label" for="select-plant-location">Ambiente / Cômodo</label>
+            <select id="select-plant-location" class="form-select" name="plantLocation">
+              <option value="sala">Sala de Estar</option>
+              <option value="varanda">Varanda / Sacada</option>
+              <option value="quarto">Quarto</option>
+              <option value="cozinha">Cozinha</option>
+              <option value="escritorio">Escritório</option>
+              <option value="jardim-externo">Jardim Externo</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset id="fieldset-care-routine" class="form-fieldset">
+          <legend class="fieldset-legend">Rotina de Rega e Luz</legend>
+
+          <div class="form-group">
+            <label id="label-watering-frequency" class="form-label" for="input-watering-frequency">Frequência de Rega (em dias) *</label>
+            <input id="input-watering-frequency" class="form-input" name="wateringFrequencyDays" type="number" min="1" max="90" required placeholder="Ex: 7">
+          </div>
+
+          <div class="form-group">
+            <label id="label-last-watered" class="form-label" for="input-last-watered">Data da Última Rega *</label>
+            <input id="input-last-watered" class="form-input" name="lastWateredDate" type="date" required>
+          </div>
+
+          <div class="form-group">
+            <label id="label-sunlight-level" class="form-label" for="select-sunlight-level">Necessidade de Iluminação</label>
+            <select id="select-sunlight-level" class="form-select" name="sunlightLevel">
+              <option value="sombra">Sombra / Baixa Luz</option>
+              <option value="meia-sombra" selected>Meia-sombra / Luz Indireta</option>
+              <option value="sol-pleno">Sol Pleno</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset id="fieldset-media-notes" class="form-fieldset">
+          <legend class="fieldset-legend">Foto e Observações</legend>
+
+          <div class="form-group">
+            <label id="label-plant-photo" class="form-label" for="input-plant-photo">Foto da Planta</label>
+            <input id="input-plant-photo" class="form-input-file" name="plantPhoto" type="file" accept="image/*">
+          </div>
+
+          <figure id="photo-preview-container" class="photo-preview-box" hidden>
+            <img id="img-photo-preview" class="photo-preview-image" src="" alt="Pré-visualização da foto da planta">
+            <figcaption class="photo-preview-caption">Pré-visualização da imagem selecionada</figcaption>
+          </figure>
+
+          <div class="form-group">
+            <label id="label-plant-notes" class="form-label" for="textarea-plant-notes">Observações de Cultivo</label>
+            <textarea id="textarea-plant-notes" class="form-textarea" name="plantNotes" rows="4" placeholder="Ex: Substrato drenável com perlita, adubar uma vez por mês..."></textarea>
+          </div>
+        </fieldset>
+
+        <div id="form-add-plant-actions" class="form-actions">
+          <button id="btn-reset-add-plant" class="btn btn-secondary" type="reset">Limpar Formulário</button>
+          <button id="btn-submit-add-plant" class="btn btn-primary" type="submit">Salvar Planta na Coleção</button>
+        </div>
+      </form>
+    </section>
+
+    <dialog id="add-plant-success-dialog" class="app-dialog" aria-labelledby="success-dialog-title">
+      <form id="add-plant-success-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="success-dialog-title" class="dialog-title">Planta Cadastrada com Sucesso!</h3>
+        </header>
+        <div class="dialog-body">
+          <p id="success-dialog-text" class="dialog-text">A planta foi salva no armazenamento local e sua próxima rega já foi agendada.</p>
+        </div>
+        <footer class="dialog-footer">
+          <a id="link-dialog-view-collection" class="btn btn-secondary" href="collection.html">Ir para Minhas Plantas</a>
+          <button id="btn-dialog-add-another" class="btn btn-primary" type="submit" value="close">Cadastrar Outra</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+  <script src="../javascript/add-plant.js" defer></script>
+</body>
+</html>
+
